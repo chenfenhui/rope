@@ -1,0 +1,19 @@
+{
+    "name": "Unity.Mono",
+    "rootNamespace": "",
+    "references": [
+        "Unity.ThirdParty",
+        "Obi"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": true,
+    "overrideReferences": false,
+    "precompiledReferences": [
+        ""
+    ],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
