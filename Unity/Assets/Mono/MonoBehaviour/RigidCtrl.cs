@@ -8,6 +8,7 @@ public enum RigidType
     Stone = 1,
     Ship = 2,
     Rod = 3,
+    BigShip =  4,
 }
 
 public class RigidCtrl : MonoBehaviour
@@ -32,7 +33,7 @@ public class RigidCtrl : MonoBehaviour
     {
         if (type == RigidType.Car || type == RigidType.Rod)
             return;
-        if (type == RigidType.Ship)
+        if (type == RigidType.Ship || type == RigidType.BigShip)
         {           
             return;
         }
@@ -48,6 +49,10 @@ public class RigidCtrl : MonoBehaviour
         {
             transform.position += transform.forward * 6f * Time.deltaTime;
             return;
+        }
+        else if (type == RigidType.BigShip)
+        {
+            transform.position += new Vector3(1,0,-1) * 6f * Time.deltaTime;
         }
     }
 

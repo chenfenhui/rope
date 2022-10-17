@@ -187,9 +187,9 @@ namespace ET
                         self.IsEnd = false;
                         self.Car.GetComponent<RigidCtrl>().enabled = false;
 
-                        await TimerComponent.Instance.WaitAsync(2500);
+                        await TimerComponent.Instance.WaitAsync(4000);
                         self.Car.GetComponent<RigidCtrl>().enabled = true;
-                        await TimerComponent.Instance.WaitAsync(2500);
+                        await TimerComponent.Instance.WaitAsync(1000);
 
                         if (RopeManager.instance.lineCount < 2)
                         {
