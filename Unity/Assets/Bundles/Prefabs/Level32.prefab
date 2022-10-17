@@ -183,10 +183,25 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Rod
       objectReference: {fileID: 0}
+    - target: {fileID: 516957514562956887, guid: 69868cf71bb0d514bb0a905539985504,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -22.12
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 69868cf71bb0d514bb0a905539985504,
         type: 3}
       propertyPath: m_Name
       value: Static
+      objectReference: {fileID: 0}
+    - target: {fileID: 990917800082906625, guid: 69868cf71bb0d514bb0a905539985504,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.389
+      objectReference: {fileID: 0}
+    - target: {fileID: 1511797271419203857, guid: 69868cf71bb0d514bb0a905539985504,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.485
       objectReference: {fileID: 0}
     - target: {fileID: 2520350507033523148, guid: 69868cf71bb0d514bb0a905539985504,
         type: 3}
@@ -197,6 +212,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_TagString
       value: Rod
+      objectReference: {fileID: 0}
+    - target: {fileID: 4793619358241838986, guid: 69868cf71bb0d514bb0a905539985504,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -16.22371
       objectReference: {fileID: 0}
     - target: {fileID: 6589658172192695192, guid: 69868cf71bb0d514bb0a905539985504,
         type: 3}
@@ -240,12 +260,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3783366754736138011}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4030961440639853401 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 248228040406156354, guid: 69868cf71bb0d514bb0a905539985504,
-    type: 3}
-  m_PrefabInstance: {fileID: 3783366754736138011}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3574639347365573883 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8855603501778463776, guid: 69868cf71bb0d514bb0a905539985504,
@@ -264,6 +278,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 3783366754736138011}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &4030961440639853401 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 248228040406156354, guid: 69868cf71bb0d514bb0a905539985504,
+    type: 3}
+  m_PrefabInstance: {fileID: 3783366754736138011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!65 &6305509006361306038
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -275,7 +295,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.6391234, y: 5.8043723, z: 1.5263281}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4411364618211938096
 MonoBehaviour:
@@ -305,7 +325,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.6391234, y: 5.8043723, z: 1.5263281}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4058241462536464654
 MonoBehaviour:
@@ -335,7 +355,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.6391234, y: 5.8043723, z: 1.5263281}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5039709754326242296
 MonoBehaviour:
@@ -413,7 +433,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  force: {x: 0, y: 0, z: 1600}
+  force: {x: 0, y: 0, z: 1400}
+--- !u!114 &6589871185828931702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3574639347365573883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LineID: 1
+  isDuan: 1
+  sata: 0
 --- !u!114 &8818430795483745579
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -528,7 +563,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.6391234, y: 5.8043723, z: 1.5263281}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1363987444426788984
 MonoBehaviour:

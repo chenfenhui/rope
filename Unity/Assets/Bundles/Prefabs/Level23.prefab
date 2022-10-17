@@ -415,7 +415,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2817093847347415592
 MonoBehaviour:
@@ -445,7 +445,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6203149990946871012
 MonoBehaviour:
@@ -478,7 +478,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &2278447280325788061
 BoxCollider:
@@ -536,7 +536,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  force: {x: 0, y: 0, z: 2000}
+  force: {x: 0, y: 0, z: 1000}
 --- !u!65 &1367929832726228420
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4990278801357590315
 MonoBehaviour:
@@ -638,7 +638,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &7243139013511101090
 MonoBehaviour:
@@ -668,7 +668,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2604788505790902356
 MonoBehaviour:
@@ -698,7 +698,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2016292983433048291
 MonoBehaviour:
@@ -728,7 +728,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &100976370771050938
 MonoBehaviour:
@@ -758,7 +758,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1499777046883715478
 MonoBehaviour:

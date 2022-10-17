@@ -269,7 +269,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.0662549, z: 1.1246924}
   m_Center: {x: -0.00000017881393, y: 0.000000029802322, z: -0.0000005662441}
 --- !u!114 &6791397759629581556
 MonoBehaviour:
@@ -299,7 +299,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.0662549, z: 1.1246924}
   m_Center: {x: 0.0000007748604, y: 0.000000029802322, z: 0.0000005066395}
 --- !u!114 &4378758185699709170
 MonoBehaviour:
@@ -329,7 +329,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.0662549, z: 1.1246924}
   m_Center: {x: -0.00000017881393, y: 0.000000029802322, z: 0.0000012218952}
 --- !u!114 &7583514175740608403
 MonoBehaviour:
@@ -389,7 +389,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.0662549, z: 1.1246923}
   m_Center: {x: 0.0000007748604, y: 0.000000029802322, z: 0.0000012516975}
 --- !u!114 &3461947328578234547
 MonoBehaviour:
@@ -422,7 +422,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &6384804614317778761
 BoxCollider:
@@ -480,7 +480,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  force: {x: 0, y: 0, z: 1500}
+  force: {x: 0, y: 0, z: 1200}
 --- !u!54 &3872191267208347787
 Rigidbody:
   m_ObjectHideFlags: 0

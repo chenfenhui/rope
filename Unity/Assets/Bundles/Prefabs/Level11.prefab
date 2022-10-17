@@ -173,6 +173,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Rod
       objectReference: {fileID: 0}
+    - target: {fileID: -80911041058738688, guid: 7b2befabe969d684abcdc1c36017b738,
+        type: 3}
+      propertyPath: m_Name
+      value: HuoChe3
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 7b2befabe969d684abcdc1c36017b738,
         type: 3}
       propertyPath: m_Name
@@ -395,7 +400,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0.000000834465}
 --- !u!114 &2540427522248069838
 MonoBehaviour:
@@ -428,7 +433,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 118
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &6951731138929917093
 BoxCollider:
@@ -443,7 +448,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 7.6903524, y: 6.286202, z: 20.94994}
   m_Center: {x: 0.0000054836273, y: 3.1541922, z: 0.00000333786}
---- !u!114 &8342093364198302866
+--- !u!114 &6991112881307562789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -486,7 +491,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  force: {x: 0, y: 0, z: 1800}
+  force: {x: 0, y: 0, z: 1200}
 --- !u!65 &4652348191576012057
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -528,7 +533,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0.0000005364418}
 --- !u!114 &182480019649024161
 MonoBehaviour:
@@ -558,7 +563,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0, y: 0, z: 0.000000834465}
 --- !u!114 &6598021032363303792
 MonoBehaviour:
@@ -588,7 +593,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246924}
   m_Center: {x: 0, y: 0, z: 0.0000020563602}
 --- !u!114 &8466194985042821895
 MonoBehaviour:
@@ -618,7 +623,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246924}
   m_Center: {x: 0.00000059604645, y: 0, z: 0.0000024735928}
 --- !u!114 &4501578195286123643
 MonoBehaviour:
@@ -678,7 +683,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0.00000059604645, y: 0, z: 0.0000012516975}
 --- !u!114 &8580962905738113618
 MonoBehaviour:
@@ -708,7 +713,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3, z: 3}
+  m_Size: {x: 1.124696, y: 1.066255, z: 1.1246923}
   m_Center: {x: 0.00000059604645, y: 0, z: 0.0000012516975}
 --- !u!114 &4863502804529299102
 MonoBehaviour:

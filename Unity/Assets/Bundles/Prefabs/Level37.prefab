@@ -193,6 +193,11 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Car
       objectReference: {fileID: 0}
+    - target: {fileID: -1212398468055455469, guid: 9ddbc5971dd439d4b91252a723339438,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -21.4
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 9ddbc5971dd439d4b91252a723339438,
         type: 3}
       propertyPath: m_Name
@@ -278,7 +283,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 5}
+  m_Size: {x: 1.6391242, y: 4.833413, z: 1.5263281}
   m_Center: {x: -0.00000032782555, y: 0, z: 0}
 --- !u!114 &4173369037728945412
 MonoBehaviour:
@@ -339,6 +344,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinematicForParticles: 0
+--- !u!114 &3765137736555029303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 819393978671517295}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LineID: 1
+  isDuan: 1
+  sata: 0
 --- !u!114 &6328974777897344114
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,7 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-  force: {x: 0, y: 0, z: 1500}
+  force: {x: 0, y: 0, z: 1100}
 --- !u!114 &7010882987450194158
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -381,8 +401,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 11.687517, y: 19.20244, z: 52.887157}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 49.73841, y: 19.20244, z: 12.753118}
+  m_Center: {x: 0.40852356, y: 0, z: -0.16603422}
 --- !u!114 &2125067324055323652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -441,7 +461,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 5}
+  m_Size: {x: 1.6391234, y: 4.833413, z: 1.5263281}
   m_Center: {x: 0.00000014901161, y: 0, z: 0}
 --- !u!114 &3756836668852370991
 MonoBehaviour:
@@ -471,7 +491,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5, y: 5, z: 5}
+  m_Size: {x: 1.6391242, y: 4.8334126, z: 1.5263281}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &3785133874345379974
 MonoBehaviour:

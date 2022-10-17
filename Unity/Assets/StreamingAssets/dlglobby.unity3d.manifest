@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1605934351
+CRC: 3991901136
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b2e1c9f74d91825ba36766e243c1cd92
+    Hash: b68e1f96d1b5a7fb184a469f7a1235b4
   TypeTreeHash:
     serializedVersion: 2
     Hash: 69ceb8938cb995ba826c4b7473517c7a
@@ -57,6 +57,8 @@ SerializeReferenceClassIdentifiers:
 - AssemblyName: UnityEngine.UI
   ClassName: UnityEngine.UI.SpriteState
 Assets:
+- Assets/Bundles/Atlas/f8c787edd8618af2eec82e1025d0efd.jpg
+- Assets/Bundles/Atlas/142a9ba827d5b588c5a913ecbe767ae.jpg
 - Assets/Bundles/UI/Dlg/DlgLobby.prefab
 - "Assets/Bundles/Atlas/\u7EC4 4.png"
 - Assets/Bundles/Atlas/demoh.png

@@ -8,7 +8,7 @@ namespace ET
     {
         public override void Awake(GameComponent self, string level)
         {
-            if (level == "Level25")
+            if (level == "Level25" || level == "Level26" || level == "Level27" || level == "Level28" || level == "Level29" || level == "Level30")
                 self.InitLevel(level, false).Coroutine();
             else
                 self.InitLevel(level).Coroutine();
@@ -84,14 +84,18 @@ namespace ET
         {
             var ctrls = self.Level.GetComponentsInChildren<RigidCtrl>();
             int shipCount = 0;
-            for (int i = 0; i < ctrls.Length; i++)
+            if (!self.IsPlay1)
             {
-                if (ctrls[i].type == RigidType.Ship)
-                    shipCount++;
-            }
+                for (int i = 0; i < ctrls.Length; i++)
+                {
+                    if (ctrls[i].type == RigidType.Ship)
+                        shipCount++;
+                }
 
-            if (RopeManager.instance.lineCount < 2)
-                return;
+                if (RopeManager.instance.lineCount < 2)
+                    return;
+            }
+            
 
             for (int i = 0; i < ctrls.Length; i++)
             {
