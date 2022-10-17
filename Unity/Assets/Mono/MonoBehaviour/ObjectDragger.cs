@@ -100,9 +100,12 @@ public class ObjectDragger : MonoBehaviour
                     transform.parent.GetComponent<RopeBreak>().deployedLength = transform.parent.GetComponent<ObiRope>().CalculateLength();
                     dragable = false;
 
+                    if (transform.parent.parent.GetComponent<RopeManager>().isPlay2)
+                    {
+                        transform.parent.GetComponent<RopeBreak>().attachmentEnd.target = currentObject;
+                    }
 
-   
-                  //  transform.parent.parent.GetComponent<RopeManager>().CurLength += (int)transform.parent.GetComponent<ObiRope>().CalculateLength();
+                    //  transform.parent.parent.GetComponent<RopeManager>().CurLength += (int)transform.parent.GetComponent<ObiRope>().CalculateLength();
                 }
             }
         }

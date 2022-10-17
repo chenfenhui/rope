@@ -8,7 +8,10 @@ namespace ET
 	{
 		public override void Awake(GameComponent self, string level)
 		{
-			self.InitLevel(level).Coroutine();
+			if(level == "Level25")
+				self.InitLevel(level,false).Coroutine();
+			else
+				self.InitLevel(level).Coroutine();
 		}
 	}
 
@@ -33,7 +36,7 @@ namespace ET
 
 	public static class GameComponentSystem
 	{
-		public static async ETTask InitLevel(this GameComponent self,string level)
+		public static async ETTask InitLevel(this GameComponent self,string level,bool isPlay1 = true)
 		{
 			
 			GameObject levelPre = ResourcesComponent.Instance.GetAsset("unit.unity3d", level) as GameObject;
@@ -44,10 +47,33 @@ namespace ET
 			self.Car.transform.position = pos1.position;
 			GlobalComponent.Instance.CM1.Follow = self.Car.transform;
 			GlobalComponent.Instance.CM1.LookAt = self.Car.transform;
-            GlobalComponent.Instance.CM1.Priority = 10;
-            GlobalComponent.Instance.CM2.Priority = 0;
+
+			if (isPlay1)
+			{
+                GlobalComponent.Instance.CM1.Priority = 10;
+                GlobalComponent.Instance.CM2.Priority = 0;
+                GlobalComponent.Instance.CM3.Priority = 0;
+            }
+			else
+			{
+                GlobalComponent.Instance.CM1.Priority = 0;
+                GlobalComponent.Instance.CM2.Priority = 10;
+                GlobalComponent.Instance.CM3.Priority = 0;
+            }
 
 			await TimerComponent.Instance.WaitAsync(200);
+			self.IsPlay1 = isPlay1;
+			if (isPlay1)
+			{
+                
+                GlobalComponent.Instance.Unit.GetComponent<RopeManager>().isPlay2 = false;
+				
+			}
+			else
+			{
+                
+                GlobalComponent.Instance.Unit.GetComponent<RopeManager>().isPlay2 = true;
+			}
 			GlobalComponent.Instance.Unit.GetComponent<RopeManager>().ResetLevel();
 			self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Lobby);
             self.ZoneScene().GetComponent<UIComponent>().CloseWindow(WindowID.WindowID_Login);
@@ -77,7 +103,7 @@ namespace ET
 					GlobalComponent.Instance.Unit.GetComponent<RopeManager>().Selectable = true;
 					GlobalComponent.Instance.CM1.Priority = 0;
 					GlobalComponent.Instance.CM2.Priority = 10;
-					
+					GlobalComponent.Instance.CM3.Priority = 0;
 				}
 				
 			}
@@ -99,6 +125,12 @@ namespace ET
 			}
             else if (self.State == GameState.Start)
             {
+				if (!self.IsPlay1)
+				{
+                    GlobalComponent.Instance.CM1.Priority = 0;
+                    GlobalComponent.Instance.CM2.Priority = 0;
+                    GlobalComponent.Instance.CM3.Priority = 10;
+                }
                 self.RigidCtrlActive();
 				self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().ReadyVisible(false);
 				self.State = GameState.End;
@@ -108,19 +140,43 @@ namespace ET
 			}
             else if (self.State == GameState.End)
             {
-				if (self.IsEnd && self.Car.GetComponent<Rigidbody>()?.velocity.magnitude <= 0.1f)
+				if (self.IsPlay1)
 				{
-					if (GlobalComponent.Instance.Unit.GetComponent<RopeManager>().DeteIfAllRopeIsBroken())
+					if (self.IsEnd && self.Car.GetComponent<Rigidbody>()?.velocity.magnitude <= 0.1f)
 					{
-						Log.Debug("fail=================");
-						self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(false);
+						if (GlobalComponent.Instance.Unit.GetComponent<RopeManager>().DeteIfAllRopeIsBroken())
+						{
+							Log.Debug("fail=================");
+							self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(false);
+						}
+						else
+						{
+							Log.Debug("success=================");
+							self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(true);
+						}
+						self.IsEnd = false;
 					}
-					else
+				}
+				else
+				{
+					if (self.IsEnd)
 					{
-						Log.Debug("success=================");
-						self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(true);
+						self.IsEnd = false;
+						await TimerComponent.Instance.WaitAsync(5000);
+
+                        if (GlobalComponent.Instance.Unit.GetComponent<RopeManager>().DeteIfAllRopeIsBroken())
+                        {
+                            Log.Debug("fail=================");
+                            self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(false);
+                        }
+                        else
+                        {
+                            Log.Debug("success=================");
+                            self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(true);
+                        }
+
+                        
 					}
-					self.IsEnd = false;
 				}
             }
 

@@ -42,7 +42,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7492272880581025442}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.1, z: 0.1}
@@ -61,7 +61,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   thickness: 0
   material: {fileID: 0}
-  filter: -131070
+  filter: 2
   m_SourceCollider: {fileID: 1921424411591840202}
   m_DistanceField: {fileID: 0}
 --- !u!54 &6155018118983698882
@@ -394,6 +394,9 @@ MonoBehaviour:
   RopeStarPointOffset: {x: 0, y: 0, z: 0}
   Obirope: {fileID: 7492272880581025443}
   Obirope_StartPoint: {fileID: 7492272880581025441}
+  attachmentStart: {fileID: 0}
+  attachmentEnd: {fileID: 0}
+  isPlay2: 0
 --- !u!1 &7492272880581025445
 GameObject:
   m_ObjectHideFlags: 0

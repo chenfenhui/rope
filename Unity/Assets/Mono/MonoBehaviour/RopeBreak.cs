@@ -12,20 +12,10 @@ public class RopeBreak : MonoBehaviour
     public Vector3 RopeStarPointOffset;
     public Transform Obirope;
     public Transform Obirope_StartPoint;
-    ObiParticleAttachment attachmentStart, attachmentEnd;
-    private void Start()
-    {
-        //绑定绳子关节锚点
-        attachmentStart = GetComponents<ObiParticleAttachment>()[0];
-        attachmentEnd = GetComponents<ObiParticleAttachment>()[1];
-        //attachmentStart.is
+    public ObiParticleAttachment attachmentStart, attachmentEnd;
 
-        //attachment = rope.gameObject.AddComponent<ObiParticleAttachment>();
-        //var blueprint = rope.blueprint.groups[1];
-        //attachment.target = transform;
-        //attachment.particleGroup = blueprint;
-        //attachment.attachmentType = ObiParticleAttachment.AttachmentType.Static;
-    }
+    public bool isPlay2;
+
     public void setBreakThreshold(float fvalue)
     {
         attachmentStart.breakThreshold = fvalue;
@@ -37,7 +27,8 @@ public class RopeBreak : MonoBehaviour
         RopeStarPointOffset = Obirope.position - Obirope_StartPoint.position;//
         //print("================");
         //print(RopeStarPointOffset);
-
+        attachmentStart = GetComponents<ObiParticleAttachment>()[0];
+        attachmentEnd = GetComponents<ObiParticleAttachment>()[1];
 
     }
     void Update()

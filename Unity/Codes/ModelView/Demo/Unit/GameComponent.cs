@@ -25,5 +25,6 @@ namespace ET
 
 		public bool IsEnd;
 
+		public bool IsPlay1;
 	}
 }

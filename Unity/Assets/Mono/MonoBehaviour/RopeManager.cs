@@ -22,6 +22,7 @@ public  class RopeManager : MonoBehaviour
     //ObiSolver solver;
     public float antiGravityScale = 2;
     ObiSolver.ObiCollisionEventArgs collisionEvent;
+    public bool isPlay2;
     //=================
     //============================
 
@@ -59,6 +60,7 @@ public  class RopeManager : MonoBehaviour
     public bool DeteIfAllRopeIsBroken()
     {
         
+
         if (transform.childCount > 0)
         {
             for (int i = 0; i < transform.childCount; i++)
@@ -125,6 +127,10 @@ public  class RopeManager : MonoBehaviour
         TheRopes.Add(go);
         TheRopes2.Add(go);
         go.transform.GetComponentInChildren<ObjectDragger>().MouseDown();
+        if (isPlay2)
+        {
+            go.GetComponent<RopeBreak>().attachmentStart.target = position;
+        }
     }
    
 

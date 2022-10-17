@@ -20,6 +20,7 @@ namespace ET
             self.PoolRoot =  GameObject.Find("Global/PoolRoot").transform;
             self.CM1 = GameObject.Find("Global/CM1").GetComponent<CinemachineVirtualCamera>();
             self.CM2 = GameObject.Find("Global/CM2").GetComponent<CinemachineVirtualCamera>();
+            self.CM3 = GameObject.Find("Global/CM3").GetComponent<CinemachineVirtualCamera>();
         }
     }
 }

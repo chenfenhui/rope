@@ -20,5 +20,7 @@ namespace ET
         public CinemachineVirtualCamera CM1;
 
         public CinemachineVirtualCamera CM2;
+
+        public CinemachineVirtualCamera CM3;
     }
 }
