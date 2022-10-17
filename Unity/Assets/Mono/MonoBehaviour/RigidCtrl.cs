@@ -46,7 +46,7 @@ public class RigidCtrl : MonoBehaviour
     {
         if (type == RigidType.Ship)
         {
-            transform.position += transform.forward * 10f * Time.deltaTime;
+            transform.position += transform.forward * 6f * Time.deltaTime;
             return;
         }
     }

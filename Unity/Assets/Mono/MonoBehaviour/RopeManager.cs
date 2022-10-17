@@ -18,6 +18,8 @@ public  class RopeManager : MonoBehaviour
     public int AllLength;
     public int CurLength;
 
+    public int lineCount = 0;
+
     //=============================================
     //ObiSolver solver;
     public float antiGravityScale = 2;
@@ -87,6 +89,7 @@ public  class RopeManager : MonoBehaviour
         TheRopes.Clear();
         TheRopes2.Clear();
         CurLength = 0;
+        lineCount = 0;
 
         int count = GameObject.FindGameObjectsWithTag("Rod").Length;
 
@@ -96,7 +99,7 @@ public  class RopeManager : MonoBehaviour
                 AllLength = 20;
                 break;
             case 3:
-                AllLength = 40;
+                AllLength = 50;
                 break;
             case 4:
                 AllLength = 60;
