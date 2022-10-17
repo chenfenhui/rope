@@ -6,6 +6,9 @@ TagManager:
   tags:
   - NavMesh
   - Rod
+  - Car
+  - Hand
+  - Line
   layers:
   - Default
   - TransparentFX
@@ -17,7 +20,7 @@ TagManager:
   - 
   - Map
   - Hidden
-  - 
+  - Rod
   - 
   - 
   - 

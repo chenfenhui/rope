@@ -1,0 +1,40 @@
+ManifestFileVersion: 0
+CRC: 1272730272
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: reddot.unity3d
+      Dependencies: {}
+    Info_1:
+      Name: esreuseui.unity3d
+      Dependencies: {}
+    Info_2:
+      Name: dlgreddot.unity3d
+      Dependencies: {}
+    Info_3:
+      Name: unit.unity3d
+      Dependencies: {}
+    Info_4:
+      Name: dlglogin.unity3d
+      Dependencies: {}
+    Info_5:
+      Name: dlglobby.unity3d
+      Dependencies: {}
+    Info_6:
+      Name: uihelp.unity3d
+      Dependencies: {}
+    Info_7:
+      Name: dlghelper.unity3d
+      Dependencies: {}
+    Info_8:
+      Name: config.unity3d
+      Dependencies: {}
+    Info_9:
+      Name: item_servertest.unity3d
+      Dependencies: {}
+    Info_10:
+      Name: code.unity3d
+      Dependencies: {}
+    Info_11:
+      Name: item_level.unity3d
+      Dependencies: {}

@@ -1,15 +1,14 @@
-﻿using Obi;
-using System;
+﻿using System;
 using UnityEngine;
 
 namespace ET
 {
 	[ObjectSystem]
-	public class GameComponentAwakeSystem : AwakeSystem<GameComponent>
+	public class GameComponentAwakeSystem : AwakeSystem<GameComponent, string>
 	{
-		public override void Awake(GameComponent self)
+		public override void Awake(GameComponent self, string level)
 		{
-			self.InitLevel();
+			self.InitLevel(level).Coroutine();
 		}
 	}
 
@@ -28,59 +27,104 @@ namespace ET
 		public override void Destroy(GameComponent self)
 		{
 			GameObject.Destroy(self.Car?.gameObject);
+			GameObject.Destroy(self.Level?.gameObject);
 		}
 	}
 
 	public static class GameComponentSystem
 	{
-		public static void InitLevel(this GameComponent self)
+		public static async ETTask InitLevel(this GameComponent self,string level)
 		{
-			Transform carFirstPos = GameObject.Find("/CarFirstPos").transform;
-			self.CarPos = GameObject.Find("/CarPos").transform;
-			GameObject car = ResourcesComponent.Instance.GetAsset("unit.unity3d", "JiRouChe") as GameObject;
-			self.Car = GameObject.Instantiate(car, GlobalComponent.Instance.Unit);
-			self.Car.transform.position = carFirstPos.position;
+			
+			GameObject levelPre = ResourcesComponent.Instance.GetAsset("unit.unity3d", level) as GameObject;
+			self.Level = GameObject.Instantiate(levelPre);
+			Transform pos1 = self.Level.transform.Find("Static/Pos1").transform;
+            self.CarPos = self.Level.transform.Find("Static/Pos2").transform;
+			self.Car = self.Level.transform.Find("Static/Car").gameObject;
+			self.Car.transform.position = pos1.position;
 			GlobalComponent.Instance.CM1.Follow = self.Car.transform;
 			GlobalComponent.Instance.CM1.LookAt = self.Car.transform;
             GlobalComponent.Instance.CM1.Priority = 10;
             GlobalComponent.Instance.CM2.Priority = 0;
+
+			await TimerComponent.Instance.WaitAsync(200);
+			GlobalComponent.Instance.Unit.GetComponent<RopeManager>().ResetLevel();
+			self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Lobby);
+            self.ZoneScene().GetComponent<UIComponent>().CloseWindow(WindowID.WindowID_Login);
+			self.State = GameState.Init;
         }
 
-		public static void Update(this GameComponent self)
+		public static void RigidCtrlActive(this GameComponent self)
 		{
-			if (self.State == GameState.Init)
+			var ctrls = self.Level.GetComponentsInChildren<RigidCtrl>();
+			for (int i = 0; i < ctrls.Length; i++)
 			{
-				self.Car.transform.position = Vector3.Lerp(self.Car.transform.position, self.CarPos.position, Time.deltaTime);
-
-				if (Vector3.Distance(self.Car.transform.position, self.CarPos.position) <= 1f)
-				{
-					self.State = GameState.Rope;
-					GlobalComponent.Instance.CM1.Priority = 0;
-					GlobalComponent.Instance.CM2.Priority = 10;
-				}
-			}
-			else if (self.State == GameState.Rope)
-			{
-				if (Input.GetMouseButtonDown(0))
-				{
-                    Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                    RaycastHit hit;
-					if (Physics.Raycast(ray, out hit))
-					{
-						if (hit.collider.tag == "Rod")
-						{
-							GameObject ropePrefab = ResourcesComponent.Instance.GetAsset("unit.unity3d", "Rope") as GameObject;
-							GameObject rope = GameObject.Instantiate(ropePrefab, GlobalComponent.Instance.Unit);
-							self.CurRope = rope.GetComponent<RopeCtrl>();
-							self.CurRope.AddAttachment(hit.collider.transform, RopeDot.start);
-							self.CurRope.AddAttachment(hit.collider.transform, RopeDot.start2);
-							self.CurRope.SetLength(1000f);
-						}
-					}
-
-                }
+				ctrls[i].enabled = true;
 			}
 		}
+
+		public static async void Update(this GameComponent self)
+		{
+
+			if (self.State == GameState.Init)
+			{
+				self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().ReadyVisible(false);
+				self.Car.transform.position = Vector3.Lerp(self.Car.transform.position, self.CarPos.position, Time.deltaTime);
+				GlobalComponent.Instance.Unit.GetComponent<RopeManager>().Selectable = false;
+				if (Vector3.Distance(self.Car.transform.position, self.CarPos.position) <= 5f)
+				{
+					self.State = GameState.Rope;
+					GlobalComponent.Instance.Unit.GetComponent<RopeManager>().Selectable = true;
+					GlobalComponent.Instance.CM1.Priority = 0;
+					GlobalComponent.Instance.CM2.Priority = 10;
+					
+				}
+				
+			}
+            else if (self.State == GameState.Rope)
+            {
+				if (TimerComponent.Instance.level == "Level1")
+				{
+					self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().Guide1().Coroutine();
+				}
+				else if (TimerComponent.Instance.level == "Level2")
+				{
+					self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().Guide2().Coroutine();
+				}
+				if(GlobalComponent.Instance.Unit.GetComponent<RopeManager>().IsAllDragOver())
+					self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().ReadyVisible(true);
+				else
+					self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().ReadyVisible(false);
+				self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SetLength(GlobalComponent.Instance.Unit.GetComponent<RopeManager>().CurLength);
+			}
+            else if (self.State == GameState.Start)
+            {
+                self.RigidCtrlActive();
+				self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().ReadyVisible(false);
+				self.State = GameState.End;
+				self.IsEnd = false;
+				await TimerComponent.Instance.WaitAsync(500);
+				self.IsEnd = true;
+			}
+            else if (self.State == GameState.End)
+            {
+				if (self.IsEnd && self.Car.GetComponent<Rigidbody>()?.velocity.magnitude <= 0.1f)
+				{
+					if (GlobalComponent.Instance.Unit.GetComponent<RopeManager>().DeteIfAllRopeIsBroken())
+					{
+						Log.Debug("fail=================");
+						self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(false);
+					}
+					else
+					{
+						Log.Debug("success=================");
+						self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(true);
+					}
+					self.IsEnd = false;
+				}
+            }
+
+        }
 
 	}
 }

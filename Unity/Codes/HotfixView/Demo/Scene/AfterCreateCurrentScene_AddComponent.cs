@@ -8,7 +8,7 @@ namespace ET
             currentScene.AddComponent<UIComponent>();
             currentScene.AddComponent<ResourcesLoaderComponent>();
 
-            currentScene.AddComponent<GameComponent>();
+            currentScene.AddComponent<GameComponent,string>(currentScene.Name);
         }
     }
 }

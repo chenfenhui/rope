@@ -1,5 +1,4 @@
-﻿using Obi;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 namespace ET
@@ -7,18 +6,24 @@ namespace ET
 
 	public enum GameState
 	{
+		None,
 		Init,
 		Rope,
+		Start,
+		End
 	}
 
-	public class GameComponent : Entity, IAwake, IUpdate, IDestroy
+	public class GameComponent : Entity, IAwake<string>, IUpdate, IDestroy
 	{
 		public Transform CarPos;
 
-		public GameState State = GameState.Init;
+		public GameState State = GameState.None;
 
 		public GameObject Car;
 
-		public RopeCtrl CurRope;
+		public GameObject Level;
+
+		public bool IsEnd;
+
 	}
 }

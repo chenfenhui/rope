@@ -417,5 +417,7 @@ namespace ET
         public const int TimeTypeMax = 10000;
 
         public ITimer[] timerActions;
+
+        public string level;
     }
 }

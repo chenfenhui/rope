@@ -7,32 +7,43 @@ using UnityEngine.UI;
 
 namespace ET
 {
+
+
+
 	public static  class DlgLoginSystem
 	{
 
 		public static void RegisterUIEvent(this DlgLogin self)
 		{
-			self.View.E_LoginButton.AddListener(() => { self.OnLoginClickHandler();});
+			
 		}
 
 		public static void ShowWindow(this DlgLogin self, Entity contextData = null)
 		{
-			
+			self.AddUIScrollItems<DlgLogin, Scroll_Item_Level>(ref self.levelDic, 48);
+			self.View.ELoopScrollList_LevelLoopVerticalScrollRect.AddItemRefreshListener(self.ShowItem);
+			self.View.ELoopScrollList_LevelLoopVerticalScrollRect.SetVisible(true, 48);
 		}
-		
-		public static void OnLoginClickHandler(this DlgLogin self)
-		{
-			LoginHelper.Login(
-				self.DomainScene(), 
-				ConstValue.LoginAddress, 
-				self.View.E_AccountInputField.GetComponent<InputField>().text, 
-				self.View.E_PasswordInputField.GetComponent<InputField>().text).Coroutine();
-		}
+
 		
 		public static void HideWindow(this DlgLogin self)
 		{
-
+			self.RemoveUIScrollItems<DlgLogin, Scroll_Item_Level>(ref self.levelDic);
 		}
-		
+
+		public static void ShowItem(this DlgLogin self,Transform trans,int index)
+		{
+			Scroll_Item_Level item = self.AddChild<Scroll_Item_Level>().BindTrans(trans);
+			item.ELabel_LevelText.text = (index + 1).ToString();
+			item.EButton_SelectButton.AddListener(() => 
+			{ 
+				SceneChangeHelper.SceneChangeTo(self.ZoneScene(), $"Level{index + 1}").Coroutine();
+				TimerComponent.Instance.level = $"Level{index + 1}";
+
+			});
+			
+		}
+
+
 	}
 }

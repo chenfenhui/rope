@@ -13,8 +13,8 @@ namespace ET
             zoneScene.AddComponent<RedDotComponent>();
             zoneScene.AddComponent<ResourcesLoaderComponent>();
 
-            // zoneScene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Login);
-            SceneChangeHelper.SceneChangeTo(zoneScene,"Level1").Coroutine();
+            zoneScene.GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Login);
+            //SceneChangeHelper.SceneChangeTo(zoneScene,"Level1").Coroutine();
         }
     }
 }
