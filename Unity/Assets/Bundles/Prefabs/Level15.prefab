@@ -102,7 +102,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3c9a4bfcf5afa1145846ca91a91ac835, type: 2}
+      objectReference: {fileID: 2100000, guid: 5f9fb87f097e99447835e63804d5cd54, type: 2}
     - target: {fileID: 6215227448278041000, guid: 6eadd0b606d4bb94a962c81f1b5ba8cb,
         type: 3}
       propertyPath: m_Name
@@ -270,7 +270,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 3c9a4bfcf5afa1145846ca91a91ac835, type: 2}
+      objectReference: {fileID: 2100000, guid: 5f9fb87f097e99447835e63804d5cd54, type: 2}
     - target: {fileID: 6215227448278041000, guid: 6eadd0b606d4bb94a962c81f1b5ba8cb,
         type: 3}
       propertyPath: m_Name
@@ -640,7 +640,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.124696, y: 1.0662549, z: 1.1246972}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: -0.00000023841858, y: 0.000000029802322, z: -0.0000006854534}
 --- !u!114 &4131561564449216362
 MonoBehaviour:
@@ -743,7 +743,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.124696, y: 1.0662549, z: 1.1246923}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: -0.00000047683716, y: 0.000000029802322, z: 0.0000010728836}
 --- !u!114 &8260665012348682110
 MonoBehaviour:
@@ -773,7 +773,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.124696, y: 1.0662549, z: 1.1246924}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: -0.00000047683716, y: 0.000000029802322, z: -0.0000002682209}
 --- !u!114 &6510243496902084497
 MonoBehaviour:
@@ -803,7 +803,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.124696, y: 1.0662549, z: 1.1246924}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: -0.00000023841858, y: 0.000000029802322, z: -0.0000002682209}
 --- !u!114 &9099172319285137437
 MonoBehaviour:
@@ -863,7 +863,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.124696, y: 1.0662549, z: 1.1246923}
+  m_Size: {x: 3, y: 3, z: 3}
   m_Center: {x: -0.00000023841858, y: 0.000000029802322, z: -0.000000834465}
 --- !u!114 &2544712904564445631
 MonoBehaviour:
