@@ -101,6 +101,17 @@ namespace ET
             }
         }
 
+        public static void RigidCtrlDisable(this GameComponent self)
+        {
+            var ctrls = self.Level.GetComponentsInChildren<RigidCtrl>();
+            for (int i = 0; i < ctrls.Length; i++)
+            {
+                if (ctrls[i].type == RigidType.Ship)
+                    ctrls[i].enabled = false;
+            }
+
+        }
+
         public static async void Update(this GameComponent self)
         {
 
@@ -190,7 +201,7 @@ namespace ET
                             Log.Debug("success=================");
                             self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(true);
                         }
-
+                     //   self.RigidCtrlDisable();
 
                     }
                 }

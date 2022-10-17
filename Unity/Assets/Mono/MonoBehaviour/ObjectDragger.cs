@@ -103,6 +103,7 @@ public class ObjectDragger : MonoBehaviour
                     if (transform.parent.parent.GetComponent<RopeManager>().isPlay2)
                     {
                         transform.parent.GetComponent<RopeBreak>().attachmentEnd.target = currentObject;
+                        transform.GetComponent<MeshRenderer>().enabled = false ;
                         RopeManager.instance.lineCount++;
                     }
 
