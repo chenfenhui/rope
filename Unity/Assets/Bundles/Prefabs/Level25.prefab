@@ -971,11 +971,11 @@ GameObject:
   - component: {fileID: 1188816421645657108}
   - component: {fileID: 1846377990169769623}
   - component: {fileID: 7612369701268378648}
-  - component: {fileID: 2779974053174511568}
-  - component: {fileID: 8090111202247718130}
+  - component: {fileID: 6204610990947995536}
+  - component: {fileID: 3408306280090991361}
   m_Layer: 0
   m_Name: bingkuai03
-  m_TagString: Untagged
+  m_TagString: Suc
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1043,7 +1043,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &2779974053174511568
+--- !u!64 &6204610990947995536
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1057,7 +1057,7 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -5104560847622454293, guid: cebb755808237444587398280caccf46, type: 3}
---- !u!114 &8090111202247718130
+--- !u!114 &3408306280090991361
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1072,5 +1072,5 @@ MonoBehaviour:
   thickness: 0
   material: {fileID: 0}
   filter: -65535
-  m_SourceCollider: {fileID: 2779974053174511568}
+  m_SourceCollider: {fileID: 6204610990947995536}
   m_DistanceField: {fileID: 0}

@@ -40,8 +40,13 @@ namespace ET
 		{
 			self.SetLength(0);
 		}
-		
-		public static void ReadyVisible(this DlgLobby self, bool isVisible)
+
+        public static void HideWindow(this DlgLobby self)
+        {
+			self.ZoneScene().CurrentScene()?.Dispose();
+        }
+
+        public static void ReadyVisible(this DlgLobby self, bool isVisible)
 		{
 			EUIHelper.SetVisible(self.View.E_EnterMapButton,isVisible);
 		}

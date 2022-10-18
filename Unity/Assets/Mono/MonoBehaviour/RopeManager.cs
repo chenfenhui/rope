@@ -3,13 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public  class RopeManager : MonoBehaviour
+public class RopeManager : MonoBehaviour
 {
     public static RopeManager instance;
-  //  public CarScript carScript;
+    //  public CarScript carScript;
     public GameObject Prefab;
     public int MaxRopes;
-    public  bool Selectable=true;
+    public bool Selectable = true;
     public List<GameObject> TheRopes = new List<GameObject>();
     public List<GameObject> TheRopes2 = new List<GameObject>();
     public int theNumberOfRope;//所部署的绳子的数量
@@ -27,10 +27,10 @@ public  class RopeManager : MonoBehaviour
     public bool isPlay2;
     //=================
     //============================
-
+    
     void Awake()
     {
-        if(instance == null)
+        if (instance == null)
             instance = this;
 
         solver = GetComponent<ObiSolver>();
@@ -40,7 +40,7 @@ public  class RopeManager : MonoBehaviour
 
     public void setSelectable(bool b)
     {
-        if(theNumberOfRope<MaxRopes&&b)
+        if (theNumberOfRope < MaxRopes && b)
             Selectable = b;
     }
 
@@ -59,9 +59,63 @@ public  class RopeManager : MonoBehaviour
         return true;
     }
 
+    public bool Play2Result(int count)
+    {
+        if (transform.childCount > 0)
+        {
+            Dictionary<string,int> keyValuePairs = new Dictionary<string,int>();
+            Dictionary<string, RopeBreak> Pairs = new Dictionary<string, RopeBreak>();
+            for (int i = 0; i < transform.childCount; i++)
+            {
+                var t1 = transform.GetChild(i).gameObject.GetComponent<RopeBreak>().attachmentStart.target.GetComponent<RigidCtrl>();
+                var t2 = transform.GetChild(i).gameObject.GetComponent<RopeBreak>().attachmentEnd.target.GetComponent<RigidCtrl>();
+                string isOK = "";
+                if (t1 != null && t1.type == RigidType.Rod)
+                {
+                    if(keyValuePairs.ContainsKey(t1.gameObject.name))
+                        keyValuePairs[t1.gameObject.name]++;
+                    else
+                        keyValuePairs.Add(t1.gameObject.name, 1);
+                    isOK = t1.gameObject.name;
+                }
+                if (t2 != null && t2.type == RigidType.Rod)
+                {
+                    if (keyValuePairs.ContainsKey(t2.gameObject.name))
+                        keyValuePairs[t2.gameObject.name]++;
+                    else
+                        keyValuePairs.Add(t2.gameObject.name, 1);
+                    isOK = t2.gameObject.name;
+                }
+
+                if (!string.IsNullOrEmpty(isOK))
+                {
+                    if(!Pairs.ContainsKey(isOK))
+                        Pairs.Add(isOK, transform.GetChild(i).gameObject.GetComponent<RopeBreak>());
+                }
+            }
+
+            bool isSuc = true;
+            foreach (var kv in keyValuePairs)
+            {
+                if (kv.Value < 2)
+                {
+                    Pairs[kv.Key].RandomCut();
+                    isSuc = false;
+                }
+            }
+
+            if (Pairs.Count < count)
+                isSuc = false;
+            return isSuc;
+        }
+
+        return false;
+    }
+
+
     public bool DeteIfAllRopeIsBroken()
     {
-        
+
 
         if (transform.childCount > 0)
         {
@@ -71,7 +125,7 @@ public  class RopeManager : MonoBehaviour
             }
         }
         //print("============carScript.GameOverFail();===============");
-     //   carScript.GameOverFail();
+        //   carScript.GameOverFail();
         return true;
     }
 
@@ -93,6 +147,7 @@ public  class RopeManager : MonoBehaviour
 
         int count = GameObject.FindGameObjectsWithTag("Rod").Length;
 
+
         switch (count)
         {
             case 2:
@@ -110,22 +165,22 @@ public  class RopeManager : MonoBehaviour
             default:
                 AllLength = 100;
                 break;
-                
         }
 
-        
+
+
     }
 
     public bool IsOk(int length)
     {
         return AllLength - CurLength - length >= 0;
-    
+
     }
 
 
     public void CreatDragableRope(Transform position)
     {
-        GameObject go = Instantiate(Prefab, position.position + new Vector3(0, 1f, 0),Quaternion.identity, transform);
+        GameObject go = Instantiate(Prefab, position.position + new Vector3(0, 1f, 0), Quaternion.identity, transform);
         go.transform.GetComponentInChildren<ObjectDragger>().AnchorStump = position;
         TheRopes.Add(go);
         TheRopes2.Add(go);
@@ -135,13 +190,13 @@ public  class RopeManager : MonoBehaviour
             go.GetComponent<RopeBreak>().attachmentStart.target = position;
         }
     }
-   
+
 
     // Update is called once per frame
     void Update()
     {
-        
-        if (Input.GetMouseButtonDown(0)&&Selectable)
+
+        if (Input.GetMouseButtonDown(0) && Selectable)
         {
             if (Input.GetMouseButton(0))//判断鼠标左键是否被单击
             {
@@ -163,14 +218,14 @@ public  class RopeManager : MonoBehaviour
                     {
                         CreatDragableRope(currentObject);
 
-                        Selectable=false;
+                        Selectable = false;
                     }
 
                 }
-       //         Debug.DrawLine(rays.origin, hitInfo1.point, Color.red);
+                //         Debug.DrawLine(rays.origin, hitInfo1.point, Color.red);
 
             }
-            
+
         }
     }
 
@@ -186,7 +241,7 @@ public  class RopeManager : MonoBehaviour
     }
     public int LinedATA = 0;
     public int VecotInt = 18;
-    public bool isDuan= false;  //判断是否短线
+    public bool isDuan = false;  //判断是否短线
     public float Linetime;
     public ObiSolver.ParticleInActor pac;
     void Solver_OnCollision(object sender, Obi.ObiSolver.ObiCollisionEventArgs e)
@@ -199,18 +254,18 @@ public  class RopeManager : MonoBehaviour
         foreach (Oni.Contact contact in e.contacts)
         {
             // if this one is an actual collision:
-            if (contact.distance < 0.01 )
+            if (contact.distance < 0.01)
             {
-               
+
                 ObiSolver.ParticleInActor pa = solver.particleToActor[solver.simplices[contact.bodyA]];
                 ObiColliderBase col = world.colliderHandles[contact.bodyB].owner;
-    
-                if (col != null&& col.gameObject.CompareTag("Car"))
+
+                if (col != null && col.gameObject.CompareTag("Car"))
                 {
 
                     if (TheRopes.Count >= LinedATA)
                     {
-                       VecotInt = 500;
+                        VecotInt = 500;
                     }
                     else if (TheRopes.Count < LinedATA)
                     {
@@ -218,14 +273,15 @@ public  class RopeManager : MonoBehaviour
                         VecotInt = 2;
                     }
                     //       Debug.LogError(pa.actor.gameObject.GetComponent<ObiRope>().CalculateLength() + "===" + 2f * pa.actor.gameObject.GetComponent<RopeBreak>().deployedLength);
-                    if (pa.actor.gameObject.GetComponent<ObiRope>().CalculateLength()>(VecotInt + pa.actor.gameObject.GetComponent<RopeBreak>().deployedLength))
+                    if (pa.actor.gameObject.GetComponent<ObiRope>().CalculateLength() > (VecotInt + pa.actor.gameObject.GetComponent<RopeBreak>().deployedLength))
                     {
-                           pa.actor.gameObject.GetComponent<RopeBreak>().RandomCut();         //断裂代码
-                       
+                        pa.actor.gameObject.GetComponent<RopeBreak>().RandomCut();         //断裂代码
+
                     }
 
                     Linetime += Time.deltaTime;
-                    if (Linetime >=1.5f) {
+                    if (Linetime >= 1.5f)
+                    {
                         Linetime = 0;
                         pac = pa;
                         LineManager();
@@ -236,7 +292,8 @@ public  class RopeManager : MonoBehaviour
 
     }
 
-    public void LineManager() {
+    public void LineManager()
+    {
         if (isDuan)
         {
             if (TheRopes.Count > 1)
@@ -254,7 +311,7 @@ public  class RopeManager : MonoBehaviour
                     {
                         TheRopes.Remove(pac.actor.gameObject);
                         pac.actor.gameObject.GetComponent<RopeBreak>().RandomCut();         //断裂代码
-                
+
                     }
                 }
             }

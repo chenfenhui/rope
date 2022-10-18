@@ -43,7 +43,7 @@ namespace ET
             self.Level = GameObject.Instantiate(levelPre);
             Transform pos1 = self.Level.transform.Find("Static/Pos1").transform;
             self.CarPos = self.Level.transform.Find("Static/Pos2").transform;
-            self.Car = self.Level.transform.Find("Static/Car").gameObject;
+            self.Car = GameObject.FindWithTag("Car").gameObject;
             self.Car.transform.position = pos1.position;
             GlobalComponent.Instance.CM1.Follow = self.Car.transform;
             GlobalComponent.Instance.CM1.LookAt = self.Car.transform;
@@ -75,6 +75,23 @@ namespace ET
                 GlobalComponent.Instance.Unit.GetComponent<RopeManager>().isPlay2 = true;
             }
             GlobalComponent.Instance.Unit.GetComponent<RopeManager>().ResetLevel();
+
+            if (TimerComponent.Instance.level == "Level27")
+            {
+                RopeManager.instance.AllLength = 250;
+            }
+            else if (TimerComponent.Instance.level == "Level28")
+            {
+                RopeManager.instance.AllLength = 200;
+            }
+            else if (TimerComponent.Instance.level == "Level29")
+            {
+                RopeManager.instance.AllLength = 200;
+            }
+            else if (TimerComponent.Instance.level == "Level30")
+            {
+                RopeManager.instance.AllLength = 350;
+            }
             self.ZoneScene().GetComponent<UIComponent>().ShowWindow(WindowID.WindowID_Lobby);
             self.ZoneScene().GetComponent<UIComponent>().CloseWindow(WindowID.WindowID_Login);
             self.State = GameState.Init;
@@ -95,7 +112,7 @@ namespace ET
                 if (RopeManager.instance.lineCount < 2)
                     return;
             }
-            
+
 
             for (int i = 0; i < ctrls.Length; i++)
             {
@@ -189,13 +206,30 @@ namespace ET
                     if (self.IsEnd)
                     {
                         self.IsEnd = false;
-                        self.Car.GetComponent<RigidCtrl>().enabled = false;
+                        int count = 1;
+                        switch (TimerComponent.Instance.level)
+                        {
+                            case "Level25":
+                                count = 1;
+                                break;
+                            case "Level27":
+                                count = 2;
+                                break;
+                            case "Level28":
+                                count = 2;
+                                break;
+                        }
 
+                        self.Car.GetComponent<RigidCtrl>().enabled = false;
+                        RopeManager.instance.Play2Result(count);
                         await TimerComponent.Instance.WaitAsync(4000);
+
                         self.Car.GetComponent<RigidCtrl>().enabled = true;
                         await TimerComponent.Instance.WaitAsync(1000);
 
-                        if (RopeManager.instance.lineCount < 2)
+
+
+                        if (!RopeManager.instance.Play2Result(count))
                         {
                             Log.Debug("fail=================");
                             self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(false);
@@ -205,7 +239,7 @@ namespace ET
                             Log.Debug("success=================");
                             self.ZoneScene().GetComponent<UIComponent>().GetDlgLogic<DlgLobby>().SettleResult(true);
                         }
-                     //   self.RigidCtrlDisable();
+                        //   self.RigidCtrlDisable();
 
                     }
                 }

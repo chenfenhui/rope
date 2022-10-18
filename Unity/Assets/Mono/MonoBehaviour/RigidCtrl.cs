@@ -15,6 +15,10 @@ public class RigidCtrl : MonoBehaviour
 {
     public RigidType type = RigidType.Car;
     public Vector3 force;
+
+    public bool isReverse;
+
+    private Vector3 oriPos;
     private void OnEnable()
     {
         if (type == RigidType.Car)
@@ -27,11 +31,18 @@ public class RigidCtrl : MonoBehaviour
         {
             GetComponent<Rigidbody>().isKinematic = false;
         }
+        oriPos = transform.position;
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (type == RigidType.Car || type == RigidType.Rod)
+
+        if (type == RigidType.Car)
+        {
+            return;
+        }
+
+        if (type == RigidType.Rod)
             return;
         if (type == RigidType.Ship || type == RigidType.BigShip)
         {           
@@ -47,13 +58,24 @@ public class RigidCtrl : MonoBehaviour
     {
         if (type == RigidType.Ship)
         {
-            transform.position += transform.forward * 6f * Time.deltaTime;
+            if(!isReverse)
+                transform.position += Vector3.forward * 6f * Time.deltaTime;
+            else
+                transform.position -= Vector3.forward * 6f * Time.deltaTime;
             return;
         }
         else if (type == RigidType.BigShip)
         {
             transform.position += new Vector3(1,0,-1) * 6f * Time.deltaTime;
+
         }
     }
+
+    public float DisZ()
+    {
+        Debug.LogError(Mathf.Abs(transform.position.z - oriPos.z).ToString());
+        return Mathf.Abs(transform.position.z - oriPos.z);
+    }
+
 
 }

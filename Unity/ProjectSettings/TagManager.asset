@@ -9,6 +9,7 @@ TagManager:
   - Car
   - Hand
   - Line
+  - Suc
   layers:
   - Default
   - TransparentFX
