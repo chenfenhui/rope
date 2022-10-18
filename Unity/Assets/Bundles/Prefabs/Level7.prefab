@@ -224,12 +224,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 664094841579644672}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &696034274695352387 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -9178448460155668669, guid: defd79bd09ea3cf43b6f71cc59916bb3,
-    type: 3}
-  m_PrefabInstance: {fileID: 664094841579644672}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &9167629284673712339 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8506913760155785171, guid: defd79bd09ea3cf43b6f71cc59916bb3,
@@ -245,6 +239,12 @@ GameObject:
 --- !u!1 &2882726807565580594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6830035941815017934, guid: defd79bd09ea3cf43b6f71cc59916bb3,
+    type: 3}
+  m_PrefabInstance: {fileID: 664094841579644672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &696034274695352387 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -9178448460155668669, guid: defd79bd09ea3cf43b6f71cc59916bb3,
     type: 3}
   m_PrefabInstance: {fileID: 664094841579644672}
   m_PrefabAsset: {fileID: 0}
@@ -321,6 +321,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinematicForParticles: 0
+--- !u!114 &7948527313798812667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 696034274695352387}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LineID: 1
+  isDuan: 1
+  sata: 0
 --- !u!65 &6383451953573602932
 BoxCollider:
   m_ObjectHideFlags: 0

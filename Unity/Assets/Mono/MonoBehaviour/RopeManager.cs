@@ -208,11 +208,11 @@ public  class RopeManager : MonoBehaviour
                 if (col != null&& col.gameObject.CompareTag("Car"))
                 {
 
-                    if (TheRopes.Count+1 >= LinedATA)
+                    if (TheRopes.Count >= LinedATA)
                     {
                        VecotInt = 500;
                     }
-                    else if (TheRopes.Count+1 < LinedATA)
+                    else if (TheRopes.Count < LinedATA)
                     {
 
                         VecotInt = 2;

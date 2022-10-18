@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   LineID: 0
-  isDuan: 0
+  isDuan: 1
   sata: 0
 --- !u!65 &2725899802673693906
 BoxCollider:

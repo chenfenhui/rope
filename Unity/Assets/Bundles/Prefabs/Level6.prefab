@@ -288,9 +288,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4907378101384622474}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1143651600312106929 stripped
+--- !u!1 &7708393581605649746 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 5459932248757718587, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
+  m_CorrespondingSourceObject: {fileID: 3378602964415335640, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
     type: 3}
   m_PrefabInstance: {fileID: 4907378101384622474}
   m_PrefabAsset: {fileID: 0}
@@ -300,9 +300,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4907378101384622474}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1143651600312106929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5459932248757718587, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
+    type: 3}
+  m_PrefabInstance: {fileID: 4907378101384622474}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2483090172633533614 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -1842192996656055004, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
+    type: 3}
+  m_PrefabInstance: {fileID: 4907378101384622474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1335379060015758287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2985118750514853307, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
     type: 3}
   m_PrefabInstance: {fileID: 4907378101384622474}
   m_PrefabAsset: {fileID: 0}
@@ -312,27 +324,21 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4907378101384622474}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3798886782083829581 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8116288104098643655, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
-    type: 3}
-  m_PrefabInstance: {fileID: 4907378101384622474}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &5368892636858213058 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8171604461040741560, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
     type: 3}
   m_PrefabInstance: {fileID: 4907378101384622474}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &4323437136808360006 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 9215892379825736140, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
-    type: 3}
-  m_PrefabInstance: {fileID: 4907378101384622474}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2829889801471110032 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7160525109107628570, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
+    type: 3}
+  m_PrefabInstance: {fileID: 4907378101384622474}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4323437136808360006 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9215892379825736140, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
     type: 3}
   m_PrefabInstance: {fileID: 4907378101384622474}
   m_PrefabAsset: {fileID: 0}
@@ -366,15 +372,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4907378101384622474}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7708393581605649746 stripped
+--- !u!1 &3798886782083829581 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 3378602964415335640, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
-    type: 3}
-  m_PrefabInstance: {fileID: 4907378101384622474}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1335379060015758287 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -2985118750514853307, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
+  m_CorrespondingSourceObject: {fileID: 8116288104098643655, guid: 3c4b1c0065d651a4cabf8ae7b4074149,
     type: 3}
   m_PrefabInstance: {fileID: 4907378101384622474}
   m_PrefabAsset: {fileID: 0}
@@ -584,6 +584,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   force: {x: 0, y: 0, z: 1200}
+--- !u!114 &7047213766178337998
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2829889801471110032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LineID: 5
+  isDuan: 1
+  sata: 0
 --- !u!54 &177939561137581560
 Rigidbody:
   m_ObjectHideFlags: 0

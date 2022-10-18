@@ -527,7 +527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LineID: 4
+  LineID: 6
   isDuan: 1
   sata: 0
 --- !u!65 &8379835128598173154

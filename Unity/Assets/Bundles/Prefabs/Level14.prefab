@@ -568,6 +568,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f93538d76ed8a1246b54c940bfd4ffe5, type: 3}
+--- !u!1 &9165646753381911673 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 425199844921337405, guid: f93538d76ed8a1246b54c940bfd4ffe5,
+    type: 3}
+  m_PrefabInstance: {fileID: 8850829084194564676}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6084165302282772062 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -5856022895883537382, guid: f93538d76ed8a1246b54c940bfd4ffe5,
@@ -601,12 +607,6 @@ GameObject:
 --- !u!1 &3624848775446397514 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3991742978499352562, guid: f93538d76ed8a1246b54c940bfd4ffe5,
-    type: 3}
-  m_PrefabInstance: {fileID: 8850829084194564676}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &9165646753381911673 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 425199844921337405, guid: f93538d76ed8a1246b54c940bfd4ffe5,
     type: 3}
   m_PrefabInstance: {fileID: 8850829084194564676}
   m_PrefabAsset: {fileID: 0}
@@ -683,6 +683,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   kinematicForParticles: 0
+--- !u!114 &1148616467740183268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1582220925585379998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LineID: 2
+  isDuan: 1
+  sata: 0
 --- !u!65 &4445993108478903147
 BoxCollider:
   m_ObjectHideFlags: 0
