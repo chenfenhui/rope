@@ -546,6 +546,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   force: {x: 0, y: 0, z: 1100}
+--- !u!114 &3621871863714758465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8715533234609088159}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LineID: 4
+  isDuan: 1
+  sata: 0
 --- !u!114 &8203787840918818594
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,21 +578,6 @@ MonoBehaviour:
   filter: -65535
   m_SourceCollider: {fileID: 4224248833939719601}
   m_DistanceField: {fileID: 0}
---- !u!114 &3621871863714758465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8715533234609088159}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LineID: 3
-  isDuan: 1
-  sata: 0
 --- !u!54 &8327557103368724347
 Rigidbody:
   m_ObjectHideFlags: 0

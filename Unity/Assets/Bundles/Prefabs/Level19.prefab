@@ -546,6 +546,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   force: {x: 0, y: 0, z: 1000}
+--- !u!114 &8369963504030672568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5755240048180953271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LineID: 2
+  isDuan: 1
+  sata: 0
 --- !u!114 &9141232724963733238
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -563,21 +578,6 @@ MonoBehaviour:
   filter: -65535
   m_SourceCollider: {fileID: 2423461592099305086}
   m_DistanceField: {fileID: 0}
---- !u!114 &8369963504030672568
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5755240048180953271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6bf10323b05ad0a4a89cf4230a8a8296, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  LineID: 1
-  isDuan: 1
-  sata: 0
 --- !u!65 &75667415790383217
 BoxCollider:
   m_ObjectHideFlags: 0
